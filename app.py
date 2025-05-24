@@ -1,9 +1,10 @@
 import streamlit as st
 import numpy as np
-import pickle
+import joblib
 
 # Load trained KMeans model
-kmeans = pickle.load(open("kmeans.pkl", 'rb'))
+kmeans = joblib.load("kmeans.pkl")
+
 
 # Clustering function based on RFM input
 def clustering(recency, frequency, monetary):
